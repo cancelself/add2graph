@@ -1,0 +1,61 @@
+<html xmlns:og="http://ogp.me/ns#">
+	<head>
+		<title><?php echo $title; ?></title>
+		<meta property="og:title" content="<?php echo $title; ?>" />
+		<meta property="og:type" content="<?php echo $type; ?>" />
+		<meta property="og:url" content="<?php echo $url; ?>" />
+		<meta property="og:image" content="<?php echo $image; ?>" />
+		<meta property="og:description" content="<?php echo $description; ?>" />
+		<meta property="og:site_name" content="add2graph.com" />
+		
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					og:title
+				</td>
+				<td>
+					<?php echo $title; ?>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					og:type
+				</td>
+				<td>
+					<?php echo $type; ?>
+				</td>
+			</tr>
+						</tr>
+						<tr>
+				<td>
+					og:url
+				</td>
+				<td>
+					<?php echo $url; ?>
+				</td>
+			</tr>
+						</tr>
+						<tr>
+				<td>
+					og:image
+				</td>
+				<td>
+					<?php echo $image; ?>
+				</td>
+			</tr>
+						</tr>
+						<tr>
+				<td>
+					og:descripton
+				</td>
+				<td>
+					<?php echo $description; ?>
+				</td>
+			</tr>
+		</table>
+	
+		<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo ?>&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+	</body>
+</html>

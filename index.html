@@ -1,0 +1,140 @@
+<html xmlns:og="http://ogp.me/ns#">
+	<head>
+	</head>
+	<body>
+	<div id="fb-root"></div>
+	<script src="http://connect.facebook.net/en_US/all.js"></script>
+	<script>
+	  FB.init({appId: '141684015857776', status: true, cookie: true, xfbml: true});
+
+	  FB.Event.subscribe('auth.sessionChange', function(response) {
+	    if (response.session) {
+	       	var control = document.getElementById("addForm");
+	 		control.style.visibility = "visible";
+	    } else {
+	      	var control = document.getElementById("addForm");
+	 		control.style.visibility = "hidden";
+	    }
+	  });
+	  
+	 </script>
+	
+
+<h1 style="font-size:40px;vertical-align:text-middle;"><img src="http://opengraphprotocol.org/open_graph_protocol_logo.png" height="70"/>Add2Graph</h1>
+<p>Heard about the <a href="http://developers.facebook.com/docs/api">Facebook Graph API</a> or the <a href="http://opengraphprotocol.org/">Open Graph Protocol</a>?  Add2Graph makes it easy to add new nodes to the Open Graph and register them with Facebook.</p>
+<fb:login-button autologoutlink="true" perms="user_likes, friends_likes"></fb:login-button>
+<p> </p>
+		<form id="addForm" action="create.php" method="POST" style="visibility:hidden;">
+			<table>
+				<tr>
+					<td>og:title</td>
+					<td><input type="text" name="title" id="title" size="100" value="The title of your object as it should appear within the graph."/></td>
+				</tr>
+				<tr>
+					<td>og:type</td>
+					<td>
+						<select id="type" name="type" title="og:type">
+							<option value="activity">Activites:activity</option>
+							<option value="sport">Activities:sport</option>
+							
+							<option value="bar">Businesses:bar</option>
+							<option value="company">Businesses:company</option>
+							<option value="cafe">Businesses:cafe</option>
+							<option value="hotel">Businesses:hotel</option>
+							<option value="restaurant">Businesses:restaurant</option>
+							
+							
+							<option value="cause">Groups:cause</option>
+							<option value="sports_league">Groups:sports_league</option>
+							<option value="sports_team">Groups:sports_team</option>
+							
+							<option value="band">Organizations:band</option>
+							<option value="government">Organizations:government</option>
+							<option value="non_profit">Organizations:non_profit</option>
+							<option value="hotel">Organizations:hotel</option>
+							<option value="restaurant">Organizations:restaurant</option>
+							
+							
+							<option value="actor">People:actor</option>
+							<option value="athlete">People:athlete</option>
+							<option value="author">People:author</option>
+							<option value="director">People:director</option>
+							<option value="musician">People:musician</option>
+							<option value="politician">People:politician</option>
+							<option value="public_figure">People:public_figure</option>
+							
+							
+							<option value="city">Places:city</option>
+							<option value="country">Places:country</option>
+							<option value="landmark">Places:landmark</option>
+							<option value="state_province">Places:state_province</option>
+							
+							
+							<option value="album">Products/Entertainment:album</option>
+							<option value="book">Products/Entertainment:book</option>
+							<option value="drink">Products/Entertainment:drink</option>
+							<option value="food">Products/Entertainment:food</option>
+							<option value="game">Products/Entertainment:game</option>
+							<option value="movie">Products/Entertainment:movie</option>
+							<option value="product">Products/Entertainment:product</option>
+							<option value="song">Products/Entertainment:song</option>
+							<option value="tv_show">Products/Entertainment:tv_show</option>
+							
+							<option value="article">Websites:article</option>
+							<option value="blog">Websites:blog</option>
+							<option value="website">Websites:website</option>
+							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>og:image</td>
+					<td><input type="text" name="image" id="image" size="100" value="An image URL which should represent your object within the graph."/></td>
+				</tr>
+				<tr>
+					<td>og:url</td>
+					<td><input type="text" name="url" id="url" size="100" value="The canonical URL of your object that will be used as its permanent ID in the graph."/></td>
+				</tr>
+								<tr>
+					<td>og:description</td>
+					<td><input type="text" name="description" id="description" size="100" value="A one to two sentence description of your object."/></td>
+				</tr>
+			</table>
+			<button type="submit">Create Node</button>
+		</form>
+		<script>
+		FB.getLoginStatus(function(response) {
+  if (response.session) {
+    	       	var control = document.getElementById("addForm");
+	 		control.style.visibility = "visible";
+  } else {
+    	       	var control = document.getElementById("addForm");
+	 		control.style.visibility = "hidden";
+  }
+});
+		</script>
+	</body>
+</html>
+<!--
+to do
+og:description - A one to two sentence description of your object.
+og:site_name - If your object is part of a larger web site, the name which should be displayed for the overall site. e.g., "IMDb".
+og:latitude - e.g., "37.416343".
+og:longitude - e.g., "-122.153013".
+If you wish to specify a human readable address, include the following five properties:
+
+og:street-address - e.g., "1601 S California Ave"
+og:locality - e.g, "Palo Alto"
+og:region - e.g., "CA"
+og:postal-code e.g., "94304"
+og:country-name - e.g., "USA"
+og:email - e.g., "me@example.com".
+og:phone_number - e.g., "+1-650-123-4567".
+og:fax_number - e.g., "+1-415-123-4567"
+
+og:upc
+og:isbn
+
+		<iframe src="http://www.facebook.com/plugins/like.php?href=' . $nodeUrl .'&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe>
+
+-->
